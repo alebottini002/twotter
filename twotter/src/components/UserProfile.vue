@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   
   <div class="user-profile">
@@ -11,17 +12,19 @@
         </div>
     </div>     
     <div class= "user-profile_twoots-wrapper">
-        <div class= "user-profile_twoot" v-for="twoot in user.twoots" :key="twoot.id">
-          {{ twoot.content }}
-        </div>
+      <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot"/>
     </div>
   </div>   
 </template>
 
 <script>
 
+import TwootItem from "./TwootItem";
+
+
 export default {
   name: 'UserProfile',
+  components: { TwootItem },
   data(){
     return {
 
@@ -58,6 +61,9 @@ export default {
     followUser(){
       this.followers++
     }
+    //toggleFavourite(id) {
+      //console.log(`favourited Tweet #${id}`)
+    //}
   },
   mounted (){
     this.followUser()

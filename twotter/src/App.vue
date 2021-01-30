@@ -2,18 +2,22 @@
   
   <div id="app">
     <UserProfile/>
+    <TwootItem/>
   </div>
 
 </template>
 
 <script>
+
 import UserProfile from "./components/UserProfile";
+import TwootItem from "./components/TwootItem";
 
 export default {
 
   name: 'App',
-  components: {UserProfile}
-}
+  components: {UserProfile, TwootItem}
+
+};
 </script>
 
 <style>
